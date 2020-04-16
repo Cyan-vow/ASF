@@ -1,6 +1,7 @@
 Centos/RedHat:
 #使用root账户登录
 #安装源
+yum install wget -y
 rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
 #安装与更新
 yum update
