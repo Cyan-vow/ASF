@@ -1,0 +1,11 @@
+{
+  "SteamLogin": "账号",
+  "SteamPassword": "密码",
+  "Enabled": true,
+  "s_SteamMasterClanID": "103582791466894224",
+  "CustomGamePlayedWhileFarming": "正在待机中 请稍候再拨",
+  "CustomGamePlayedWhileIdle": "我不在线的说",
+  "GamesPlayedWhileIdle": [
+    8500
+  ]
+}
