@@ -1,0 +1,30 @@
+Centos/RedHat:
+#使用root账户登录
+#安装源
+rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
+#安装与更新
+yum update
+yum install dotnet-sdk-2.1
+#检测安装是否成功
+dotnet --version
+#如果返回了例如2.1.0的字符，表示成功
+Debian/Ubuntu:
+#使用root账户登录
+su
+#如果不知道密码请执行sudo passwd root然后输入两遍密码
+#安装源与密钥
+apt -y install wget
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.asc.gpg
+mv microsoft.asc.gpg /etc/apt/trusted.gpg.d/
+wget -q https://packages.microsoft.com/config/debian/8/prod.list    #debian8
+wget -q https://packages.microsoft.com/config/debian/9/prod.list    #debian9
+mv prod.list /etc/apt/sources.list.d/microsoft-prod.list
+chown root:root /etc/apt/trusted.gpg.d/microsoft.asc.gpg
+chown root:root /etc/apt/sources.list.d/microsoft-prod.list
+#安装组件和.NET Core
+apt-get install apt-transport-https
+apt-get update
+apt-get install dotnet-sdk-2.1
+#查看是否安装成功
+dotnet --version
+#如果返回了例如2.1.0的字符，表示成功
